@@ -1,22 +1,25 @@
-function result = enrichment_1(plus,n)
-d_plus = plus(2:length(plus),2)- plus(1:length(plus)-1,2);
-i_plus=find(d_plus>n);
+function result = enrichment_1(strand,n)
+% strand is the input dataset of one strand, either strand or minus
+% n is the 
+
+d_strand = strand(2:length(strand),2)- strand(1:length(strand)-1,2);
+i_strand=find(d_strand>n);
 
 start = 1;
-for i = 1:length(i_plus)
-    if(i==length(i_plus))
+for i = 1:length(i_strand)
+    if(i==length(i_strand))
         break;
     end
     
-    interval(i).up=plus(start,2);
-    interval(i).down = plus(i_plus(i),2);
+    up(i)=strand(start,2);
+    down(i) = strand(i_strand(i),2);
     
-    len(i)=plus(i_plus(i),2)-plus(start,2);
-    count(i)=length(plus(start:i_plus(i)));
-    start=i_plus(i)+1;
+    len(i)=strand(i_strand(i),2)-strand(start,2);
+    count(i)=length(strand(start:i_strand(i)));
+    start=i_strand(i)+1;
 end
-result.interval=interval;
-
+result.up=up;
+result.down=down;
 result.len=len;
 result.count=count;
 end
