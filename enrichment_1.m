@@ -11,8 +11,8 @@ for i = 1:length(i_strand)
         break;
     end
     
-    up(i)=strand(start,2);
-    down(i) = strand(i_strand(i),2);
+    down(i)=strand(start,2);
+    up(i) = strand(i_strand(i),2);
     
     len(i)=strand(i_strand(i),2)-strand(start,2);
     count(i)=length(strand(start:i_strand(i)));
