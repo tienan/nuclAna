@@ -19,4 +19,3 @@ count = [length(plus(1:i_plus(1)-1,2)) count];
 [c,l] = wavedec(s,5,'sym4');
 a5 = wrcoef('a',c,l,'sym4',5);
 
-[ibx ctrs]=kmeans(data(:,1),100,'emptyaction','drop')
